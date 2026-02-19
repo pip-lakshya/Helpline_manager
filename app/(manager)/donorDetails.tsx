@@ -65,29 +65,29 @@ export default function DonorDetails() {
     );
   };
 
- return (
-  <ScrollView
-    style={styles.container}
-    contentContainerStyle={{ paddingBottom: 120 }}
-  >
+  return (
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ paddingBottom: 120 }}
+    >
 
-    <Text style={styles.heading}>Edit Donor</Text>
+      <Text style={styles.heading}>Edit Donor</Text>
 
-    <Input label="Name" value={name} setValue={setName} />
-    <Input label="Phone" value={phone} setValue={setPhone} />
-    <Input label="Age" value={age} setValue={setAge} />
-    <Input label="Blood Group" value={bloodGroup} setValue={setBloodGroup} />
-    <Input label="City" value={city} setValue={setCity} />
-    <Input label="Area" value={area} setValue={setArea} />
-    <Input label="Donor Type (SDP/Blood)" value={donorType} setValue={setDonorType} />
-    <Input label="Availability" value={availability} setValue={setAvailability} />
-    <Input label="Last Donation (DD-MM-YYYY)" value={lastDonationDate} setValue={setLastDonationDate} />
-    <Input label="Preferred Time" value={preferredTimeSlot} setValue={setPreferredTimeSlot} />
+      <Input label="Name" value={name} setValue={setName} />
+      <Input label="Phone" value={phone} setValue={setPhone} />
+      <Input label="Age" value={age} setValue={setAge} />
+      <Input label="Blood Group" value={bloodGroup} setValue={setBloodGroup} />
+      <Input label="City" value={city} setValue={setCity} />
+      <Input label="Area" value={area} setValue={setArea} />
+      <Input label="Donor Type (SDP/Blood)" value={donorType} setValue={setDonorType} />
+      <Input label="Availability" value={availability} setValue={setAvailability} />
+      <Input label="Last Donation (DD-MM-YYYY)" value={lastDonationDate} setValue={setLastDonationDate} />
+      <Input label="Preferred Time" value={preferredTimeSlot} setValue={setPreferredTimeSlot} />
 
-    <AppButton title="Update Donor" onPress={updateDonor} />
+      <AppButton title="Update Donor" onPress={updateDonor} />
 
-  </ScrollView>
-);
+    </ScrollView>
+  );
 }
 
 function Input({ label, value, setValue }: any) {
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     padding: 12,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    color: "black"
   }
 });

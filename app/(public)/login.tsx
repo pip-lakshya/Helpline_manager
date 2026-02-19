@@ -1,10 +1,9 @@
 import { useRouter } from "expo-router";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
-import { auth } from "../../firebaseConfig";
 import AppButton from "../../components/AppButton";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
 
 export default function Login() {
   const router = useRouter();
@@ -38,18 +37,20 @@ export default function Login() {
       <Text style={styles.title}>Manager Login</Text>
 
       <TextInput
+        value={email}
+        onChangeText={setEmail}
+        style={styles.input}
         placeholder="Email"
         placeholderTextColor="#999"
-        style={styles.input}
-        onChangeText={setEmail}
       />
 
       <TextInput
-        placeholder="Password"
-        placeholderTextColor="#999"
+        value={password}
+        onChangeText={setPassword}
         secureTextEntry
         style={styles.input}
-        onChangeText={setPassword}
+        placeholder="Password"
+        placeholderTextColor="#999"
       />
 
       <AppButton title="Login" onPress={handleLogin} />
@@ -72,6 +73,14 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
+  input: {
+  borderWidth: 1,
+  padding: 12,
+  marginBottom:10,
+  borderRadius: 10,
+  backgroundColor: "white",
+  color: "black" // ⭐ VERY IMPORTANT
+},
   container: {
     flex: 1,
     justifyContent: "center",
@@ -82,12 +91,5 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: 20,
     fontWeight: "bold"
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#333",
-    padding: 12,
-    marginBottom: 15,
-    borderRadius: 8
   }
 });

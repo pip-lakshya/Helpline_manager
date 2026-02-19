@@ -25,6 +25,8 @@ export default function Dashboard() {
 
   // realtime request listener
   useEffect(() => {
+    if (!user) return;
+
     const unsub = onSnapshot(collection(db, "requests"), (snapshot) => {
       let data: any[] = snapshot.docs.map(d => ({
         id: d.id,
@@ -93,8 +95,8 @@ export default function Dashboard() {
     <View style={{ flex: 1 }}>
       <Navbar />
 
-      <View style={{ flex: 1, padding: 15,paddingBottom: 80 }}>
-        
+      <View style={{ flex: 1, padding: 15, paddingBottom: 80 }}>
+
 
         <View style={{ height: 10 }} />
 
@@ -137,16 +139,28 @@ export default function Dashboard() {
                 </Text>
               )}
 
-              <Picker
-                selectedValue={item.status}
-                onValueChange={(value) =>
-                  changeStatus(item.id, value, item.status)
-                }
+              <View
+                style={{
+                  borderWidth: 1,
+                  borderRadius: 8,
+                  backgroundColor: "white",
+                  marginTop: 5,
+                  marginBottom: 10,
+                }}
               >
-                <Picker.Item label="Pending" value="pending" />
-                <Picker.Item label="Contacted" value="contacted" />
-                <Picker.Item label="Completed" value="completed" />
-              </Picker>
+                <Picker
+                  selectedValue={item.status}
+                  onValueChange={(value) =>
+                    changeStatus(item.id, value, item.status)
+                  }
+                  style={{ color: "black" }}
+                  dropdownIconColor="black"
+                >
+                  <Picker.Item label="Pending" value="pending" />
+                  <Picker.Item label="Contacted" value="contacted" />
+                  <Picker.Item label="Completed" value="completed" />
+                </Picker>
+              </View>
 
               <Button
                 title="Find Donor"
@@ -176,7 +190,7 @@ export default function Dashboard() {
           )}
         />
       </View>
-      
+
     </View>
   );
 }

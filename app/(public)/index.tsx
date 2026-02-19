@@ -7,28 +7,38 @@ import { db } from "../../firebaseConfig";
 import { useEffect, useState } from "react";
 import { Image } from "react-native";
 
+
 export default function Home() {
   const router = useRouter();
   const { user } = useAuth();
 
   const [stats, setStats] = useState({
-    donors: 0,
-    requests: 0,
+    livesSaved: 1240,
+    donors: 3200,
+    requests: 150
   });
 
   useEffect(() => {
+    if (!user) return; // ⭐ CRITICAL FIX
+
+    const fetchStats = async () => {
+      try {
+        const requestsSnap = await getDocs(collection(db, "requests"));
+        const donorsSnap = await getDocs(collection(db, "donors"));
+
+        setStats({
+          livesSaved: requestsSnap.size,
+          donors: donorsSnap.size,
+          requests: requestsSnap.size
+        });
+
+      } catch (err) {
+        console.log("Stats fetch failed:", err);
+      }
+    };
+
     fetchStats();
-  }, []);
-
-  const fetchStats = async () => {
-    const donors = await getDocs(collection(db, "donors"));
-    const requests = await getDocs(collection(db, "requests"));
-
-    setStats({
-      donors: donors.size,
-      requests: requests.size,
-    });
-  };
+  }, [user]);
 
   const handleManagerLogin = () => {
     if (user) router.push("../(manager)/dashboard");
