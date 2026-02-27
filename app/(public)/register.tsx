@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { View, TextInput, Alert, StyleSheet } from "react-native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
 import AppButton from "@/components/AppButton";
 import { useRouter } from "expo-router";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { Alert, StyleSheet, TextInput, View,Text } from "react-native";
+import { auth } from "../../firebaseConfig";
+import { inputStyles } from "../../styles/inputStyles";
 
 export default function Register() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function Register() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Manager Registration</Text>
       <TextInput
         placeholder="Email"
         style={styles.input}
@@ -45,5 +47,6 @@ export default function Register() {
 
 const styles = StyleSheet.create({
   container: { flex:1, justifyContent:"center", padding:20 },
-  input:{ borderWidth:1, padding:12, marginBottom:15 }
+  input:{ marginBottom:15, ...inputStyles.input },
+  title:{fontSize: 22,marginBottom: 20,fontWeight: "bold"}
 });

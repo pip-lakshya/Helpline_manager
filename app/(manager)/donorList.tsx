@@ -1,5 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { inputStyles } from "../../styles/inputStyles";
 
 import AppButton from "@/components/AppButton";
 import { useRouter } from "expo-router";
@@ -149,12 +150,8 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    padding: 14,
     marginBottom: 12,
-    backgroundColor: "white",
-    borderRadius: 12
+    ...inputStyles.input
   },
 
   card: {

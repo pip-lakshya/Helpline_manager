@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Alert, ScrollView, Text, TextInput } from "react-native";
 import { db } from "../../firebaseConfig";
 import AppButton from "../../components/AppButton";
+import { inputStyles } from "../../styles/inputStyles";
 
 export default function AddDonor(){
 
@@ -64,10 +65,7 @@ return(
 
 const styles={
 input:{
-borderWidth:1,
-padding:12,
 marginBottom:10,
-backgroundColor:"white",
-borderRadius:6
+...inputStyles.input
 }
 }

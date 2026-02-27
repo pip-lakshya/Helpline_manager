@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Alert, ScrollView, Switch, Text, TextInput, View } from "react-native";
 import { db } from "../../firebaseConfig";
 import AppButton from "../../components/AppButton";
+import { inputStyles } from "../../styles/inputStyles";
 
 export default function Request() {
 
@@ -97,12 +98,11 @@ export default function Request() {
 
 const styles = {
   input: {
-    borderWidth: 1,
-    padding: 12,
+    ...inputStyles.input,
     marginBottom: 10,
     backgroundColor: "white",
     borderRadius: 6,
     color: "black",
-    placeholderTextColor: "#999"
+    placeholderTextColor: "gray"
   }
 } 

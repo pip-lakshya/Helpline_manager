@@ -14,8 +14,8 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.replace("/dashboard");
-    } catch (error) {
-      Alert.alert("Invalid login");
+    } catch (error: any) {
+      Alert.alert(error.message);
     }
   }
   const forgotPassword = async () => {
@@ -74,13 +74,13 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   input: {
-  borderWidth: 1,
-  padding: 12,
-  marginBottom:10,
-  borderRadius: 10,
-  backgroundColor: "white",
-  color: "black" // ⭐ VERY IMPORTANT
-},
+    borderWidth: 1,
+    padding: 12,
+    marginBottom: 10,
+    borderRadius: 10,
+    backgroundColor: "white",
+    color: "black" // ⭐ VERY IMPORTANT
+  },
   container: {
     flex: 1,
     justifyContent: "center",

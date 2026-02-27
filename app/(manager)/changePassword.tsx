@@ -1,8 +1,9 @@
-import { View, Text, TextInput, Alert, StyleSheet } from "react-native";
-import { updatePassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
 import AppButton from "@/components/AppButton";
+import { updatePassword } from "firebase/auth";
 import { useState } from "react";
+import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
+import { auth } from "../../firebaseConfig";
+import { inputStyles } from "../../styles/inputStyles";
 
 export default function ChangePassword() {
   const [newPassword, setNewPassword] = useState("");
@@ -48,9 +49,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, justifyContent: "center" },
   title: { fontSize: 22, marginBottom: 20, fontWeight: "bold" },
   input: {
-    borderWidth: 1,
-    padding: 12,
     marginBottom: 20,
-    borderRadius: 8,
+    ...inputStyles.input
   },
 });
