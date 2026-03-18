@@ -1,50 +1,130 @@
-# Welcome to your Expo app 👋
+# 🩸 BloodConnect Helpline Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 🚀 Overview
 
-## Get started
+BloodConnect Helpline Manager is an application designed to efficiently handle blood donation requests and connect them with suitable donors.
 
-1. Install dependencies
+It helps volunteers and coordinators manage requests, filter donors, and respond quickly in critical situations.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🎯 Problem Statement
 
-   ```bash
-   npx expo start
-   ```
+Handling blood requests manually leads to:
 
-In the output, you'll find options to open the app in a
+* Delays in response
+* Inefficient donor matching
+* Poor tracking of requests
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+In emergency situations, time is critical — manual systems are not reliable.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 💡 Solution
 
-When you're ready, run:
+This system streamlines the helpline process by:
 
-```bash
-npm run reset-project
+* Managing requests in an organized way
+* Filtering donors based on key parameters
+* Enabling faster and more efficient response
+
+---
+
+## ✨ Features
+
+* 📞 Manage blood requests
+* 🔍 Filter donors based on:
+
+  * Blood group
+  * Location
+  * Availability
+* ⚡ Quick donor matching
+* 📋 Structured request tracking
+* 🎯 Designed for real-world BloodConnect usage
+
+---
+
+## 🎥 Demo, APK & Pitch
+
+📽 **Demo Video, Elevator Pitch & Pitch Deck:**
+👉 https://drive.google.com/file/d/1OM5zqiLVeLnRbQ8kCNXx0zKalJxsegDc/view?usp=drivesdk
+
+📱 **APK Download:**
+👉 https://drive.google.com/file/d/1OM5zqiLVeLnRbQ8kCNXx0zKalJxsegDc/view?usp=drivesdk
+
+> ⚠️ Enable "Install from unknown sources" on your Android device.
+
+---
+
+## 🔐 Demo Login Credentials
+
+```text
+Email: admin@gmail.com
+Password: admin@123
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🛠 Tech Stack
 
-To learn more about developing your project with Expo, look at the following resources:
+* TypeScript
+* React Native
+* Firestore Firebase 
+* Firestore Authentication
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## ⚙️ Setup Instructions
 
-Join our community of developers creating universal apps.
+### 🔹 Clone the Repository
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+git clone https://github.com/pip-lakshya/Helpline_manager.git
+```
+
+### 🔹 Install Dependencies
+
+```bash
+npm install
+```
+
+### 🔹 Run the App
+
+```bash
+npm start
+```
+
+---
+
+## 🏆 Hackathon / Event
+
+This project was developed as part of **CodeRed Appathon organized by IIT Delhi**.
+
+---
+
+## 👨‍💻 Author
+
+**Lakshya Bhandari**
+
+---
+
+## 🚀 Future Improvements
+
+* Role-based access system
+* Real-time notifications
+* Location-based donor matching
+* AI-based donor recommendations
+
+---
+
+## 📌 Note
+
+This project is built for real-world usage in managing blood donation helpline operations.
+
+---
+
+## 📸 Screenshots
+
+![Home page](readme-images/home.png) ![Request form](readme-images/request.png)
+![login](readme-images/login.png) ![Dashboard](readme-images/dash.png)
+![Donor Directory](readme-images/donor.png) ![Donor edit](readme-images/donoredit.png)
